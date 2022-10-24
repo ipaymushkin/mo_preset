@@ -15,6 +15,17 @@ interface Props {
   meta: any;
 }
 
+const getBackground = (place: number) => {
+  if (place === 0) {
+    return '#C9B037';
+  } else if (place === 1) {
+    return '#B4B4B4';
+  } else if (place === 2) {
+    return '#AD8A56';
+  }
+  return 'transparent';
+};
+
 const Leaders: FC<Props> = ({ meta: metaProps }) => {
   const meta = useMemo(() => {
     const newMeta = metaProps.map((el: any) => {
@@ -45,7 +56,13 @@ const Leaders: FC<Props> = ({ meta: metaProps }) => {
           {meta.map((group, idx) => {
             return group.map((row) => {
               return (
-                <TableRow key={row._id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                <TableRow
+                  key={row._id}
+                  sx={{
+                    '&:last-child td, &:last-child th': { border: 0 },
+                    background: getBackground(idx),
+                  }}
+                >
                   <TableCell component='th' scope='row'>
                     {idx + 1}
                   </TableCell>
