@@ -10,6 +10,7 @@ import { history } from './routes/history';
 import { Global, css } from '@emotion/react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { fetchInstance } from './utils/axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 

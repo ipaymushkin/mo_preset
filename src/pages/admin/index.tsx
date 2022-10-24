@@ -55,6 +55,16 @@ const AdminPage: FC = () => {
         <Tab label='Статистика по вопросам' {...a11yProps(1)} />
         <Tab label='Статистика по людям' {...a11yProps(2)} />
       </Tabs>
+      {/*<button*/}
+      {/*  onClick={() => {*/}
+      {/*    fetchInstance({*/}
+      {/*      method: 'DELETE',*/}
+      {/*      url: '/remove-all',*/}
+      {/*    });*/}
+      {/*  }}*/}
+      {/*>*/}
+      {/*  123*/}
+      {/*</button>*/}
       <Container>
         {tab === 0 && <Leaders meta={meta} />}
         {tab === 1 && <ByQuestions meta={meta} />}
