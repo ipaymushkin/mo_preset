@@ -2,13 +2,21 @@ import React, { FC, useCallback, useState } from 'react';
 import List from './List';
 import Auth from './Auth';
 
+const defaultMeta = {
+  firstName: '',
+  lastName: '',
+  middleName: '',
+  answers: [],
+};
+
 const MainPage: FC = () => {
   const [meta, setMeta] = useState({
-    firstName: '',
-    lastName: '',
-    middleName: '',
-    answers: [],
+    ...defaultMeta,
   });
+
+  const clearMeta = useCallback(() => {
+    setMeta({ ...defaultMeta });
+  }, []);
 
   const handleMeta = useCallback((name: string, value: string) => {
     setMeta((state) => ({
@@ -31,7 +39,10 @@ const MainPage: FC = () => {
 
   const [isAuth, setIsAuth] = useState(false);
 
-  if (isAuth) return <List setAnswer={handleAnswer} meta={meta} />;
+  if (isAuth)
+    return (
+      <List setAnswer={handleAnswer} meta={meta} setIsAuth={setIsAuth} clearMeta={clearMeta} />
+    );
   return (
     <Auth
       firstName={meta.firstName}

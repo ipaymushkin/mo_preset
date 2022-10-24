@@ -8,6 +8,8 @@ import Routes from './routes';
 import { Router } from 'react-router-dom';
 import { history } from './routes/history';
 import { Global, css } from '@emotion/react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -47,5 +49,6 @@ root.render(
     <Router history={history}>
       <Routes />
     </Router>
+    <ToastContainer position='bottom-center' theme='dark' />
   </>,
 );
