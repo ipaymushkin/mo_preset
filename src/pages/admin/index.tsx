@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { CircularProgress, Tab, Tabs } from '@mui/material';
 import Leaders from './Leaders';
 import ByQuestions from './ByQuestions';
+import ByUser from './ByUser';
 
 function a11yProps(index: number) {
   return {
@@ -15,7 +16,7 @@ function a11yProps(index: number) {
 const AdminPage: FC = () => {
   const [loading, setLoading] = useState(true);
   const [meta, setMeta] = useState([]);
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState(2);
 
   const handleChange = useCallback((event: any, newValue: number) => {
     setTab(newValue);
@@ -57,6 +58,7 @@ const AdminPage: FC = () => {
       <Container>
         {tab === 0 && <Leaders meta={meta} />}
         {tab === 1 && <ByQuestions meta={meta} />}
+        {tab === 2 && <ByUser meta={meta} />}
       </Container>
     </Wrapper>
   );
