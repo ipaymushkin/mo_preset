@@ -40,7 +40,6 @@ const ByUser: FC<Props> = ({ meta }) => {
       </FormControl>
       <Wrapper>
         {questions.map((el, idx) => {
-          console.log(el, selected);
           return (
             <Card
               key={`card-${idx}`}
