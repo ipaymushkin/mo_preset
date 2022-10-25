@@ -84,6 +84,7 @@ const List: FC<Props> = ({ setAnswer, meta, setIsAuth, clearMeta }) => {
                           value={index}
                           control={<Radio />}
                           label={option.title}
+                          sx={{ marginTop: '30px' }}
                         />
                       ))}
                     </RadioGroup>
