@@ -16,7 +16,7 @@ function a11yProps(index: number) {
 const AdminPage: FC = () => {
   const [loading, setLoading] = useState(true);
   const [meta, setMeta] = useState([]);
-  const [tab, setTab] = useState(2);
+  const [tab, setTab] = useState(0);
 
   const handleChange = useCallback((event: any, newValue: number) => {
     setTab(newValue);
